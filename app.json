@@ -1,0 +1,56 @@
+{
+  "name": "˹ʙʀᴏᴋᴇɴ ꭙ ᴍᴜsɪᴄ˼",
+  "description": "Telegram Advanced Music Bot by BrokenX",
+  "keywords": [
+    "music",
+    "voice chat",
+    "telegram",
+    "bot",
+    "pytgcalls",
+    "pyrogram"
+  ],
+  "repository": "https://github.com/BrokenX/BrokenXMusic",
+  "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API HASH from my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Your Bot token from @BotFather",
+      "required": true
+    },
+    "MONGO_DB_URI": {
+      "description": "Your MongoDB connection URL",
+      "required": true
+    },
+    "STRING_SESSION": {
+      "description": "Your Pyrogram String Session for the assistant account",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "List of user IDs who have sudo permissions (separated by spaces)",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
